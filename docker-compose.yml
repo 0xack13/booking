@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  s4l-service-api:
+    build:
+      context: ./
+      target: build
+      dockerfile: .docker/api/Dockerfile
+    image: s4l-service-api
+    environment:
+      - SERVER_PORT=3214
+      - SERVER_TIMEOUT=${SERVER_TIMEOUT-60}
+    ports:
+      - ${SERVER_PORT-7546}:3214
+    volumes:
+      - ./:/go/src/github.com/carlos/s4l-service-api
