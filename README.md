@@ -1,5 +1,5 @@
 # Stay4Long Challenge Code
-[![CI Test](https://github.com/xSolrac87/stay4long/actions/workflows/test.yml/badge.svg)](https://github.com/xSolrac87/stay4long/actions/workflows/test.yml)
+[![CI Test](https://github.com/xSolrac87/stay4long/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/xSolrac87/stay4long/actions/workflows/test.yml)
 
 This challenge was about create an API with a unique namespace ( booking ) and under that with two different endpoints.  
 ````
