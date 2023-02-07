@@ -1,5 +1,5 @@
 # Booking API
-[![CI Test](https://github.com/xSolrac87/booking/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/xSolrac87/booking/actions/workflows/test.yml)
+[![CI Test](https://github.com/xSolrac87/booking/actions/workflows/test.yml/badge.svg)](https://github.com/xSolrac87/booking/actions/workflows/test.yml)
 
 This repo is about create an API with a unique namespace ( booking ) and under that with two different endpoints.  
 ````
