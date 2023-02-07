@@ -3,7 +3,7 @@ package booking
 import (
 	"encoding/json"
 	"errors"
-	"github.com/carlos/s4l/timeparser"
+	"github.com/xsolrac87/booking/timeparser"
 	"time"
 )
 

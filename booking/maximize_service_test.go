@@ -3,7 +3,7 @@
 package booking
 
 import (
-	"github.com/carlos/s4l/timeparser"
+	"github.com/xsolrac87/booking/timeparser"
 	"reflect"
 	"testing"
 	"time"

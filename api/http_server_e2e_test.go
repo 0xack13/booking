@@ -5,7 +5,7 @@ package api
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/carlos/s4l/booking"
+	"github.com/xsolrac87/booking/booking"
 	"io"
 	"net/http"
 	"net/http/httptest"

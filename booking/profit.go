@@ -1,7 +1,7 @@
 package booking
 
 import (
-	"github.com/carlos/s4l/floatrounder"
+	"github.com/xsolrac87/booking/floatrounder"
 )
 
 type ProfitPerNight struct {

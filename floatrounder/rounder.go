@@ -4,8 +4,6 @@ import (
 	"math"
 )
 
-// ToNearest The average profit per night from all the booking requests (two digit precision)
-// https://app.swaggerhub.com/apis-docs/BlackfireSFL/BackendChallenge/1.0.1#/StatsResponse
 func ToNearest(f float64) float64 {
 	return math.Round(f*100) / 100
 }

@@ -3,7 +3,7 @@ package api
 import (
 	"context"
 	"fmt"
-	"github.com/carlos/s4l/booking"
+	"github.com/xsolrac87/booking/booking"
 	"log"
 	"net/http"
 	"time"

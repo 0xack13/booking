@@ -83,8 +83,6 @@ func (m *MaximizeService) hasBetterTotalProfit(a, b MaximizeProfit) bool {
 
 func (m *MaximizeService) sortBookingsByCheckIn(bookings []Booking) {
 	sort.Slice(bookings, func(i, j int) bool {
-		//a := bookings[i].CheckIn.AddDate(0, 0, int(bookings[i].Nights))
-		//b := bookings[j].CheckIn.AddDate(0, 0, int(bookings[j].Nights))
 		return bookings[i].CheckIn.Before(bookings[j].CheckIn)
 	})
 }

@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/carlos/s4l/api"
+	"github.com/xsolrac87/booking/api"
 	"log"
 	"os"
 	"os/signal"
