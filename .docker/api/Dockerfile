@@ -11,7 +11,7 @@ WORKDIR /go/src/github.com/carlos/${APP}
 COPY go.mod ./
 
 COPY . .
-RUN go build -o booking-service-${SERVICE} /go/src/github.com/carlos/${APP}/cmd/${SERVICE}
+RUN go build -o booking-service-${SERVICE} /go/src/github.com/xsolrac87/${APP}/cmd/${SERVICE}
 
 CMD ["./booking-service-api"]
 
@@ -22,5 +22,5 @@ ENV APP=booking-service-api
 WORKDIR /home/nonroot
 USER nonroot
 
-COPY --chown=nonroot --from=build /go/src/github.com/carlos/${APP}/${APP} /home/nonroot/
+COPY --chown=nonroot --from=build /go/src/github.com/xsolrac87/${APP}/${APP} /home/nonroot/
 CMD ["./booking-service-api"]
