@@ -1,5 +1,5 @@
-# Stay4Long Challenge Code
-[![CI Test](https://github.com/xSolrac87/stay4long/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/xSolrac87/stay4long/actions/workflows/test.yml)
+# Booking Challenge Code
+[![CI Test](https://github.com/xSolrac87/booking/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/xSolrac87/booking/actions/workflows/test.yml)
 
 This challenge was about create an API with a unique namespace ( booking ) and under that with two different endpoints.  
 ````
@@ -118,10 +118,10 @@ There are two endpoints available:
 ### UNIT && E2E
 - #### with docker-compose ( assuming your docker container is the same ):
      ```bash
-     docker exec -it s4l_s4l-service-api_1 go test ./... -tags=unit -v
+     docker exec -it booking-service-api_1 go test ./... -tags=unit -v
      ```
     ```bash
-    docker exec -it s4l_s4l-service-api_1 go test ./... -tags=e2e -v
+    docker exec -it booking-service-api_1 go test ./... -tags=e2e -v
      ```
 - #### with make:
    ```bash
@@ -143,7 +143,7 @@ I've added benchmark functions to `MaximTotalProfits` and `ProfitPerNight`. This
 that number of bookings, I left it with 1M ( can be change on your own ). ( booking/stats_service_test.go:115 )
 - #### with docker-compose ( assuming your docker container is the same ):
      ```bash
-     docker exec -it s4l_s4l-service-api_1 go test ./... -bench=. -tags=unit
+     docker exec -it booking-service-api_1 go test ./... -bench=. -tags=unit
      ```
 - #### with make:
    ```bash
@@ -158,10 +158,10 @@ that number of bookings, I left it with 1M ( can be change on your own ). ( book
 I have also added fuzzing test (stress test) to profit logic, with the appropriate time or for production I'd add fuzzing test to HTTP handler.
 - #### with docker-compose ( assuming your docker container is the same ):
      ```bash
-     docker exec -it s4l_s4l-service-api_1 go test ./booking/ --fuzz=FuzzPerNight -fuzztime=10s -tags=unit
+     docker exec -it booking-service-api_1 go test ./booking/ --fuzz=FuzzPerNight -fuzztime=10s -tags=unit
      ```
     ```bash
-    docker exec -it s4l_s4l-service-api_1 go test ./booking/ --fuzz=FuzzProfit -fuzztime=10s -tags=unit
+    docker exec -it booking-service-api_1 go test ./booking/ --fuzz=FuzzProfit -fuzztime=10s -tags=unit
      ```
 - #### with make:
    ```bash
@@ -177,25 +177,4 @@ I have also added fuzzing test (stress test) to profit logic, with the appropria
     ```bash
   go test ./booking/ --fuzz=FuzzProfit -fuzztime=10s -tags=unit
   ```
-
-## Conclusion
-Topics that I eager to discuss with stay4long team, to see/know their approach.
-### Dealing with floats
-I Knew from the beginning that I'd have problems comparing float numbers,  
-since comparing the result of floating-point calculations depends on the actual processor.
-For that reason a put some comments on unit testing saying that one solution could be Comparing two values using a delta.
-### Maximize endpoint
-At first, I use a brute force solution, fora nested loop
-```
-for j := i + 1; j < len(bookings); j++ {
-	b := bookings[j]
-	if m.noOverlap(booking, b) {
-		combinations[booking.RequestID] = append(combinations[booking.RequestID], b)
-		checked[b.RequestID] = struct{}{}
-	}
-}
-```
-Even the benchmark wasn't that bad, I was not happy with it, so I decided to change it for the current one,
-even I know is not perfect it improves around 38% and has better allocations.
-With the proper time I'd have implemented a binary search to reduce complexity to 0(n)
 
